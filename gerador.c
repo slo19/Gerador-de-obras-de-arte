@@ -4,19 +4,19 @@
 #include <time.h>
 
 void inserePonto(char Matriz[20][80], int Qtde){
-    int x[Qtde], y[Qtde], valorAleatorio;
+    int x, y, valorAleatorio, controle=0;
     srand(time(NULL));
-    for(int i=0; i<Qtde; i++){
+    
+    while(controle<Qtde){
         valorAleatorio = rand()%1404;
-        x[i] = valorAleatorio%78;
-        y[i] = valorAleatorio/78;
-    }
-    for(int j=0; j<Qtde; j++){
-        Matriz[y[j]+1][x[j]+1] = '#';
-        printf("x = %d      y = %d \n", x[j], y[j]);
+        x = valorAleatorio%78;
+        y = valorAleatorio/78;
+        if (Matriz[y+1][x+1]==' '){
+            Matriz[y+1][x+1] = '*';
+            controle++;
+        }
     }
 }
-
 void iniciaMatriz(char Matriz[20][80]){
     for(int i=0;i<20;i++){
         for(int j=0;j<80;j++){
@@ -34,7 +34,6 @@ void iniciaMatriz(char Matriz[20][80]){
         }
     }
 }
-
 void imprimirMatriz(char Matriz[20][80]){
     for(int i=0;i<20;i++){
         for(int j=0;j<80;j++){
@@ -42,4 +41,48 @@ void imprimirMatriz(char Matriz[20][80]){
         }
         printf("\n");
     }
+}
+void insereCruz(char Matriz[20][80], int Qtde){
+    int x, y, valorAleatorio, controle=0;
+    srand(time(NULL));  
+    while(controle<Qtde){
+        valorAleatorio = rand()%1216;
+        x = valorAleatorio%76;
+        y = valorAleatorio/76;
+        if (Matriz[y+2][x+2]==' '&&Matriz[y+2][x+1]==' '&&Matriz[y+1][x+2]==' '&&Matriz[y+2][x+3]==' '&&Matriz[y+3][x+2]==' '){
+            Matriz[y+2][x+2] = '*';
+            Matriz[y+2][x+1] = '*';
+            Matriz[y+2][x+3] = '*';
+            Matriz[y+1][x+2] = '*';
+            Matriz[y+3][x+2] = '*';
+            controle++;
+        }
+    }
+}
+void insereX(char Matriz[20][80], int Qtde){
+    int x, y, valorAleatorio, controle=0;
+    srand(time(NULL));  
+    while(controle<Qtde){
+        valorAleatorio = rand()%1216;
+        x = valorAleatorio%76;
+        y = valorAleatorio/76;
+        if (Matriz[y+2][x+2]==' '&&Matriz[y+1][x+1]==' '&&Matriz[y+3][x+1]==' '&&Matriz[y+1][x+3]==' '&&Matriz[y+3][x+3]==' '){
+            Matriz[y+2][x+2] = '*';
+            Matriz[y+3][x+1] = '*';
+            Matriz[y+1][x+3] = '*';
+            Matriz[y+1][x+1] = '*';
+            Matriz[y+3][x+3] = '*';
+            controle++;
+        }
+    }
+}
+void insereAleatorio(char Matriz[20][80], int Qtde){
+    int x, y, valorAleatorio, controle=0, ponto, cruz, cheese;
+    srand(time(NULL));
+    ponto = rand()%Qtde;
+    cruz = rand()%(Qtde-ponto);
+    cheese = Qtde-(ponto+cruz);
+    inserePonto(Matriz, ponto);
+    insereCruz(Matriz, cruz);
+    insereX(Matriz, cheese);
 }

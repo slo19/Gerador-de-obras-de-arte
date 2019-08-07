@@ -6,6 +6,6 @@ int main()
     char Quadro[20][80];
 
     iniciaMatriz(Quadro);
-    inserePonto(Quadro,30);
+    insereAleatorio(Quadro,10);
     imprimirMatriz(Quadro);
 }
