@@ -6,5 +6,6 @@ int main()
     char Quadro[20][80];
 
     iniciaMatriz(Quadro);
-    imprimirMatriz(&Quadro);
+    inserePonto(Quadro,10);
+    imprimirMatriz(Quadro);
 }
