@@ -7,12 +7,12 @@ void inserePonto(char Matriz[20][80], int Qtde){
     int x[Qtde], y[Qtde], valorAleatorio;
     srand(time(NULL));
     for(int i=0; i<Qtde; i++){
-        valorAleatorio = rand()%1600;
-        x[i] = valorAleatorio%80;
-        y[i] = valorAleatorio/80;
+        valorAleatorio = rand()%1404;
+        x[i] = valorAleatorio%78;
+        y[i] = valorAleatorio/78;
     }
     for(int j=0; j<Qtde; j++){
-        Matriz[y[j]][x[j]] = '#';
+        Matriz[y[j]+1][x[j]+1] = '#';
         printf("x = %d      y = %d \n", x[j], y[j]);
     }
 }
