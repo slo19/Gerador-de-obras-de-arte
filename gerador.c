@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <time.h>
 
-void inserePonto(char *Matriz[][], int Qtde){
+void inserePonto(char Matriz[20][80], int Qtde){
     int x[Qtde], y[Qtde], valorAleatorio;
     srand(time(NULL));
     for(int i=0; i<Qtde; i++){
@@ -11,33 +11,34 @@ void inserePonto(char *Matriz[][], int Qtde){
         x[i] = valorAleatorio%80;
         y[i] = valorAleatorio/80;
     }
-    for(int i=0; i<Qtde; i++){
-        *(Matriz)[x[i]][y[i]] = "*";
+    for(int j=0; j<Qtde; j++){
+        Matriz[y[j]][x[j]] = '#';
+        printf("x = %d      y = %d \n", x[j], y[j]);
     }
 }
 
-void iniciaMatriz(char *Matriz[][]){
+void iniciaMatriz(char Matriz[20][80]){
     for(int i=0;i<20;i++){
         for(int j=0;j<80;j++){
             if(i==0||i==19){
-                *(Matriz)[i][j]= "-";
+                Matriz[i][j]= '-';
             }
             else{
                 if(j==0||j==79){
-                    *(Matriz)[i][j] = "|";
+                    Matriz[i][j] = '|';
                 }
                 else{
-                    *(Matriz)[i][j] = " ";
+                    Matriz[i][j] = ' ';
                 }
             }
         }
     }
 }
 
-void imprimirMatriz(char *Matriz[][]){
+void imprimirMatriz(char Matriz[20][80]){
     for(int i=0;i<20;i++){
         for(int j=0;j<80;j++){
-            printf("%c", *(Matriz)[i][j]);
+            printf("%c", Matriz[i][j]);
         }
         printf("\n");
     }
