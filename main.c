@@ -10,8 +10,13 @@ int main()
     iniciaMatriz(Quadro);
     inicio();
     scanf("%d", /* code */&Opcao);
-    pedeQuantidade();
-    scanf("%d", &Quantidade);
+    if(Opcao>0&&Opcao<5){
+        pedeQuantidade();
+        scanf("%d", &Quantidade);
+    }else{
+        pedePalpite();
+        scanf("%d", &Quantidade);
+    }
     switch (Opcao)
     {
     case 1:
@@ -35,7 +40,7 @@ int main()
         imprimirMatriz(Quadro);
         break;
     default:
-        obraCavalo(Quadro);
+        criaGota(Quadro, Quantidade);
         imprimirMatriz(Quadro);
         break;
     }

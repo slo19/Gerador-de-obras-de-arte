@@ -97,13 +97,67 @@ void checaInteiro(int *Qtde){
     }
     printf("%d FOI A QUANTIDADE\n", *Qtde);
 }
-void obraCavalo(char Matriz[20][80]){
-    Matriz[3][6]='-';
-    Matriz[3][10]='-';
-    Matriz[3][13]='-';
-    Matriz[4][16]='-';
-    Matriz[6][15]='-'; 
-    Matriz[8][12]='-';
-    Matriz[8][13]='-';   
-    printf("AQUI FOI");
+void criaGota(char Matriz[20][80], int Palpite){
+    int X, Y, ValorAleatorio, QuantidadeAleatoria, Controle = 0, Erro;
+    srand(time(NULL));
+    QuantidadeAleatoria = (rand()%30)+1;
+    ValorAleatorio = rand()%1092;
+    Erro = QuantidadeAleatoria-Palpite;
+    X = ValorAleatorio%73;
+    Y = ValorAleatorio/73;
+    while(Controle<QuantidadeAleatoria){
+        ValorAleatorio = rand()%1092;
+        X = ValorAleatorio%73;
+        Y = ValorAleatorio/73;
+        if(Matriz[Y+1][X+3]==' '&&Matriz[Y+1][X+4]==' '&&Matriz[Y+2][X+2]==' '&&Matriz[Y+2][X+5]==' '&&Matriz[Y+3][X+1]==' '&&Matriz[Y+3][X+6]==' '&&Matriz[Y+4][X+1]==' '&&Matriz[Y+4][X+6]==' '&&Matriz[Y+5][X+2]==' '&&Matriz[Y+5][X+3]==' '&&Matriz[Y+5][X+4]==' '&&Matriz[Y+5][X+5]==' '){
+            Matriz[Y+1][X+3] ='/';
+            Matriz[Y+1][X+4] ='\\';
+            Matriz[Y+2][X+2] ='/';
+            Matriz[Y+2][X+5] ='\\';
+            Matriz[Y+3][X+1] ='/';
+            Matriz[Y+3][X+6] ='\\';
+            Matriz[Y+4][X+1] ='\\';
+            Matriz[Y+4][X+6] ='/';
+            Matriz[Y+5][X+2] ='\'';
+            Matriz[Y+5][X+3] ='~';
+            Matriz[Y+5][X+4] ='~';
+            Matriz[Y+5][X+5] ='\'';
+        Controle++;
+        }
+    }
+    if(Erro<0)
+        Erro = Erro*(-1);
+
+    if(Erro>25){
+        printf("----------------------\n");
+        printf("ERROU FEIO, ERROU RUDE\n");
+        printf("----------------------\n");
+    }else if(Erro>20){
+        printf("------------------\n");
+        printf("ERROOOOOOOOOOOUUUU\n");  
+        printf("------------------\n");   
+    }else if(Erro>15){
+        printf("--------------------------------------------\n");
+        printf("TÁ MAIS FÁCIL OS TRAPALHÕES GANHAREM O OSCAR\n");
+        printf("--------------------------------------------\n");
+    }else if(Erro>10){
+        printf("---------------------------------------------------\n");
+        printf("QUE BOM QUE VOCÊ NÃO TRABALHA COM PREVISÃO DO TEMPO\n");
+        printf("---------------------------------------------------\n");
+    }else if(Erro>5){
+        printf("---------------------------------------------\n");
+        printf("QUASE ACERTOU, MAS NÃO DESISTA, ERRE DE NOVO!\n");
+        printf("---------------------------------------------\n");
+    }else if(Erro>0){
+        printf("-----------------------------\n");
+        printf("PASSOU PERTO, TENTE OUTRA VEZ\n");
+        printf("-----------------------------\n");
+    }else{
+        printf("---------------------------------------------------------------------\n");
+        printf("VAI GANHAR, VAI PERDER, VAI GANHAR, VAI PERDER, PERDEEEU, GANHOOOOOUU\n");
+        printf("---------------------------------------------------------------------\n");
+    }
+    printf("A resposta certa é %d\n", QuantidadeAleatoria);
+    
+
 }

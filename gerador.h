@@ -9,5 +9,5 @@ void insereX(char Matriz[20][80], int Qtde);
 void insereX(char Matriz[20][80], int Qtde);
 void insereAleatorio(char Matriz[20][80], int Qtde);
 void checaInteiro(int *Qtde);
-void obraCavalo(char Matriz[20][80]);
+void criaGota(char Matriz[20][80], int Palpite);
 #endif // GERADOR_H_INCLUDED

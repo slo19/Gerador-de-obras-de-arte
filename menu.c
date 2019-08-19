@@ -17,3 +17,6 @@ void inicio(){
 void pedeQuantidade(){
     printf("Quantidade desejada de figuras(Máx. 100 e menor ou igual a zero para aleatório): ");
 }
+void pedePalpite(){
+    printf("Quantas gotas acha que choverá?(Dica: de 0 a 30)\n");
+}

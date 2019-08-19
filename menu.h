@@ -3,4 +3,5 @@
 
 void inicio();
 void pedeQuantidade();
+void pedePalpite();
 #endif // MENU_H_INCLUDED
