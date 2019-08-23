@@ -95,7 +95,6 @@ void checaInteiro(int *Qtde){
             *Qtde = (rand()%100)+1;
         }   
     }
-    printf("%d FOI A QUANTIDADE\n", *Qtde);
 }
 void criaGota(char Matriz[20][80], int Palpite){
     int X, Y, ValorAleatorio, QuantidadeAleatoria, Controle = 0, Erro;

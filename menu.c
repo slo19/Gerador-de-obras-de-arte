@@ -4,7 +4,7 @@
 void inicio(){
     printf("PROGRAMA GERADOR DE OBRA DE ARTE:\n");
     printf("--------------------------------------------------------------\n");
-    printf("Escolha o tipo de figura basica a ser usada para criar a obra:\n");
+    printf("Escolha o tipo de figura básica a ser usada para criar a obra:\n");
     printf("1. Asterisco simples\n");
     printf("2. Símbolo de soma com asteriscos\n");
     printf("3. Letra X com asteriscos\n");
