@@ -136,17 +136,9 @@ void criaGota(char Matriz[20][80], int Palpite){
         printf("------------------\n");
         printf("ERROOOOOOOOOOOUUUU\n");  
         printf("------------------\n");   
-    }else if(Erro>15){
-        printf("--------------------------------------------\n");
-        printf("TÁ MAIS FÁCIL OS TRAPALHÕES GANHAREM O OSCAR\n");
-        printf("--------------------------------------------\n");
     }else if(Erro>10){
-        printf("---------------------------------------------------\n");
-        printf("QUE BOM QUE VOCÊ NÃO TRABALHA COM PREVISÃO DO TEMPO\n");
-        printf("---------------------------------------------------\n");
-    }else if(Erro>5){
         printf("---------------------------------------------\n");
-        printf("QUASE ACERTOU, MAS NÃO DESISTA, ERRE DE NOVO!\n");
+        printf("NÃO FOI DESSA VEZ, MAS NÃO DESISTA, TENTE DE NOVO!\n");
         printf("---------------------------------------------\n");
     }else if(Erro>0){
         printf("-----------------------------\n");
