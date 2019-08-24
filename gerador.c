@@ -85,6 +85,7 @@ void insereAleatorio(char Matriz[20][80], int Qtde){
     inserePonto(Matriz, Ponto);
     insereCruz(Matriz, Cruz);
     insereX(Matriz, Xis);
+    printf("Asteriscos simples: %d\nSinal de mais: %d\nLetra X: %d\n", Ponto,Cruz,Xis);
 }
 void checaInteiro(int *Qtde){
     if(*Qtde>100){
@@ -157,6 +158,5 @@ void criaGota(char Matriz[20][80], int Palpite){
         printf("---------------------------------------------------------------------\n");
     }
     printf("A resposta certa é %d\n", QuantidadeAleatoria);
-    
 
 }
